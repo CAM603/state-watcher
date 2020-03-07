@@ -9,7 +9,7 @@ export const register = credentials => dispatch => {
     axios
       .post('https://comake4.herokuapp.com/api/auth/register', credentials)
       .then(res => {
-        console.log(res)
+        console.log('register success', res)
         dispatch({ type: REGISTER_SUCCESS, payload: res.data })
       })
       .catch(err => {

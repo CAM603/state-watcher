@@ -23,7 +23,7 @@ const Register = ({register}) => {
         register(user)
         setUser({username: '', password: ''})
     }
-    console.log(user)
+    
     return (
         <div>
             <div>
@@ -38,12 +38,14 @@ const Register = ({register}) => {
                 name="username"
                 placeholder="username"
                 onChange={handleChanges}
+                value={user.username}
                 />
                 <input
                 type="password"
                 name="password"
                 placeholder="password"
                 onChange={handleChanges}
+                value={user.password}
                 />
                 <button>Join</button>
             </form>
