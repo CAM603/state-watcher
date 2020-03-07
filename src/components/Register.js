@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Register = () => {
+import { register } from '../actions/registerAction'
+
+const Register = ({register}) => {
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
+
+    const handleChanges = event => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value 
+        })
+    }
+
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        register(user)
+        setUser({username: '', password: ''})
+    }
+    console.log(user)
     return (
         <div>
             <div>
@@ -10,16 +32,18 @@ const Register = () => {
                 </Link>
             </div>
             <h1>Register</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                 type="text"
                 name="username"
                 placeholder="username"
+                onChange={handleChanges}
                 />
                 <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
+                onChange={handleChanges}
                 />
                 <button>Join</button>
             </form>
@@ -27,4 +51,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default connect(null, {register})(Register);
