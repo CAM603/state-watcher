@@ -7,6 +7,7 @@ import Login from './components/Login';
 import PrivateRoute from './utils/PrivateRoute';
 import './App.css';
 import Dashboard from './components/Dashboard';
+import States from './components/States';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/register" component={Register}/>
       <Route path="/login" render={props => <Login {...props}/>}/>
       <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+      <PrivateRoute path="/states" component={States} />
     </div>
   );
 }

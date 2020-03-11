@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { login } from '../actions/loginReducer';
+import { login } from '../actions/loginAction';
 
 const Login = (props) => {
     const [user, setUser] = useState({

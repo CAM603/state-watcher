@@ -5,7 +5,9 @@ import {
 } from '../actions/userAction';
 
 const initialState = {
-
+    username: '',
+    points: 0,
+    about: ''
 }
 
 export const user = (state = initialState, action) => {
@@ -16,7 +18,10 @@ export const user = (state = initialState, action) => {
             }
         case GET_USER_SUCCESS:
             return {
-                ...state
+                ...state,
+                username: action.payload.username,
+                points: action.payload.points,
+                about: action.payload.about
             }
         case GET_USER_FAILURE:
             return {

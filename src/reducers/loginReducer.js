@@ -2,12 +2,12 @@ import {
     LOGIN_START,
     LOGIN_SUCCESS,
     LOGIN_FAILURE
-} from '../actions/loginReducer';
+} from '../actions/loginAction';
 
 const initialState = {
     loading: false,
     error: '',
-    user_id: ''
+    user_id: 0
 }
 
 export const login = (state = initialState, action) => {
@@ -19,6 +19,7 @@ export const login = (state = initialState, action) => {
             }
         }
         case LOGIN_SUCCESS: {
+            console.log(action.payload)
             return {
                 ...state,
                 loading: false,
