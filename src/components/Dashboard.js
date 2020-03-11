@@ -1,9 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-const Dashboard = (props) => {
+class Dashboard extends React.Component {
+  render() {
+
     return (
         <div>BashBoard</div>
     )
+  }
 }
-
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    user_id: state.user_id
+  }
+}
+export default connect(mapStateToProps, {})(Dashboard);

@@ -22,7 +22,7 @@ export const login = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                user: action.payload.user_id
+                user_id: action.payload.user_id
             }
         }
         case LOGIN_FAILURE: {
