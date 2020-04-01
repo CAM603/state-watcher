@@ -53,3 +53,8 @@ export const getStateIssues = (id) => dispatch => {
         dispatch({ type: GET_STATE_ISSUES_FAILURE, payload: err.response })
     })
 }
+
+export const getStateAndIssues = (id) => async (dispatch) => {
+    await dispatch(getState(id))
+    dispatch(getStateIssues(id))
+}

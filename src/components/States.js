@@ -8,19 +8,25 @@ const States = (props) => {
         props.getStates()
     }, [])
 
+
     return (
         <div>
-            {props.states.map(state => (
-                <Link to={`states/${state.id}`}>
-                    <p key={state.id}>{state.name}</p>
+            {props.loading ? 
+            <h1>Loading...</h1> 
+            : 
+            props.states.map(state => (
+                <Link key={state.id} to={`states/${state.id}`}>
+                    <p>{state.name}</p>
                 </Link>
-            ))}
+            ))
+            }
         </div>
     )
 }
 const mapStateToProps = state => {
     return {
-        states: state.states.states
+        states: state.states.states,
+        loading: state.states.loadingStates
     }
 }
 export default connect(mapStateToProps, {getStates})(States);
