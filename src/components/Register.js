@@ -34,18 +34,18 @@ const Register = ({register}) => {
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
                 <input
-                type="text"
-                name="username"
-                placeholder="username"
-                onChange={handleChanges}
-                value={user.username}
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    onChange={handleChanges}
+                    value={user.username}
                 />
                 <input
-                type="password"
-                name="password"
-                placeholder="password"
-                onChange={handleChanges}
-                value={user.password}
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    onChange={handleChanges}
+                    value={user.password}
                 />
                 <button>Join</button>
             </form>

@@ -13,7 +13,7 @@ export const getStates = () => dispatch => {
         dispatch({ type: GET_STATES_SUCCESS, payload: res.data })
     })
     .catch(err => {
-        console.log(err)
-        dispatch({ type: GET_STATES_FAILURE })
+        console.log('states error', err)
+        dispatch({ type: GET_STATES_FAILURE, payload: err.response })
     })
 }
