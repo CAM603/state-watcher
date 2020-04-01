@@ -23,10 +23,10 @@ export const getUser = (id) => dispatch => {
     })
 }
 
-export const updateUser = (id) => dispatch => {
+export const updateUser = (id, user) => dispatch => {
     dispatch({ type: UPDATE_USER_START })
     axiosWithAuth()
-    .put(`https://comake4.herokuapp.com/api/users/${id}`)
+    .put(`https://comake4.herokuapp.com/api/users/${id}`, user)
     .then(res => {
         console.log(res)
         dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data })
