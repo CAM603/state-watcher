@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getStates} from '../actions/statesAction'
 
@@ -7,11 +8,12 @@ const States = (props) => {
         props.getStates()
     }, [])
 
-    console.log(props.states)
     return (
         <div>
             {props.states.map(state => (
-                <p key={state.id}>{state.name}</p>
+                <Link to={`states/${state.id}`}>
+                    <p key={state.id}>{state.name}</p>
+                </Link>
             ))}
         </div>
     )
