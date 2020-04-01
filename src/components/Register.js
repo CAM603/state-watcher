@@ -31,24 +31,31 @@ const Register = ({register}) => {
                     <button>←</button>
                 </Link>
             </div>
-            <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="username"
-                    onChange={handleChanges}
-                    value={user.username}
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="password"
-                    onChange={handleChanges}
-                    value={user.password}
-                />
-                <button>Join</button>
-            </form>
+            <div class="ui inverted segment">
+                <form onSubmit={handleSubmit} className="ui inverted form">
+                    <div className="field">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="username"
+                            onChange={handleChanges}
+                            value={user.username}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="password"
+                            onChange={handleChanges}
+                            value={user.password}
+                        />
+                    </div>
+                    <button className="ui button" type="submit">Register</button>
+                </form>
+            </div>
         </div>
     )
 }
