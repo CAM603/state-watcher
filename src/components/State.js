@@ -23,7 +23,7 @@ const State = (props) => {
     )
   }
   const renderLoading = () => {
-    return <h1>Loading...</h1>
+    return <div class="ui active centered inline loader"></div>
   }
   return (
     <div>

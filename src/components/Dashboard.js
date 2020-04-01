@@ -22,6 +22,11 @@ const Dashboard = (props) => {
     setUpdating(false)
   }
 
+  const updateUser = () => {
+    setUpdating(true)
+    setAbout(props.about)
+  }
+
   return (
         <div>
           <div>
@@ -50,7 +55,7 @@ const Dashboard = (props) => {
               </form>
             :
             <>
-            <button onClick={() => setUpdating(true)}>Update</button>
+            <button onClick={updateUser}>Update</button>
             <p>{props.about}</p>
             </>
             }

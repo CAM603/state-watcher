@@ -10,10 +10,10 @@ const Onboarding = () => {
                 <p>Cool picture</p>
             </div>
             <Link to="/register">
-                <button>Join</button>
+                <button className="ui button">Join</button>
             </Link>
             <Link to="/login">
-                <button>Sign in</button>
+                <button className="ui button">Sign in</button>
             </Link>
         </div>
     )

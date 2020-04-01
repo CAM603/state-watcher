@@ -26,7 +26,12 @@ const StateIssues = (props) => {
   }
 
   const renderLoading = () => {
-    return <h1>Loading...</h1>
+    return (
+      <div class="ui segment">
+        <div class="ui active loader"></div>
+        <p></p>
+      </div>
+    )
   }
 
   return (

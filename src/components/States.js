@@ -11,9 +11,20 @@ const States = (props) => {
 
     return (
         <div>
-            {props.loading ? 
-            <h1>Loading...</h1> 
-            : 
+            {props.loading ?
+            <div class="ui vertically divided grid">
+                <div class="one column row">
+                    <div class="column">
+                        <div class="ui segment">
+                            <p></p>
+                            <div class="ui active dimmer">
+                                <div class="ui loader"></div>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            :
             props.states.map(state => (
                 <Link key={state.id} to={`states/${state.id}`}>
                     <p>{state.name}</p>
