@@ -13,7 +13,7 @@ const Onboarding = () => {
           <a className="item">Careers</a>
           <div className="right menu">
             <div className="item">
-              <Link to="/login" className="ui inverted button">Sign in</Link>
+              <Link to="/login" className="ui inverted button">Login</Link>
             </div>
             <div className="item">
               <Link to="/register" className="ui inverted button">Sign Up</Link>
@@ -33,7 +33,7 @@ const Onboarding = () => {
               <a className="item">Company</a>
               <a className="item">Careers</a>
               <div className="right item">
-                <Link to="/login" className="ui inverted button">Sign in</Link>
+                <Link to="/login" className="ui inverted button">Login</Link>
                 <Link to="/register" className="ui inverted button">Sign Up</Link>
               </div>
             </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getStates} from '../actions/statesAction'
+import Wrapper from './Wrapper';
 
 const States = (props) => {
     useEffect(() => {
@@ -10,7 +11,7 @@ const States = (props) => {
 
 
     return (
-        <div>
+        <Wrapper>
             {props.loading ?
             <div class="ui vertically divided grid">
                 <div class="one column row">
@@ -31,7 +32,7 @@ const States = (props) => {
                 </Link>
             ))
             }
-        </div>
+        </Wrapper>
     )
 }
 const mapStateToProps = state => {

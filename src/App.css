@@ -1,7 +1,4 @@
-.App {
-  box-sizing: border-box;
-  margin: 0;  
-}
+/* Onboarding */
 .hidden.menu {
   display: none;
 }
@@ -85,4 +82,18 @@
     margin-top: 0.5em;
     font-size: 1.5em;
   }
+}
+/* Dashboard */
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
+}
+.main.container {
+  margin-top: 7em;
+}
+.wireframe {
+  margin-top: 2em;
+}
+.ui.footer.segment {
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
 }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getState, getStateIssues, getStateAndIssues} from '../actions/statesAction';
 import { useParams } from 'react-router-dom';
 import StateIssues from './StateIssues';
+import Wrapper from './Wrapper';
 
 const State = (props) => {
   const {id} = useParams();
@@ -13,22 +14,22 @@ const State = (props) => {
 
   const renderScreen = () => {
     return (
-      <>
+      <div>
         <h1>Welcome to {props.currentState.name}</h1>
         <h2>Issues</h2>
         <div>
           <StateIssues issues={props.issues}/>
         </div>
-      </>
+      </div>
     )
   }
   const renderLoading = () => {
-    return <div class="ui active centered inline loader"></div>
+    return <div class="ui active centered loader"></div>
   }
   return (
-    <div>
+    <Wrapper>
       {props.loadingState ? renderLoading() : renderScreen()}
-    </div>
+    </Wrapper>
   )
 }
 const mapStateToProps = state => {
