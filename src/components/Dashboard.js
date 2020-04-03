@@ -31,67 +31,29 @@ const Dashboard = (props) => {
   }
 
   return (
-        // <div>
-        //   <div>
-        //     <Link to ="/states">
-        //       <p>States</p>
-        //     </Link>
-        //     <p onClick={() => {
-        //       localStorage.removeItem('token')
-        //       props.history.push('/')
-        //       }}>Logout</p>
-        //   </div>
-        //   <div>
-        //     <h1>Welcome {props.username}</h1>
-        //     <h3>Total points: {props.points}</h3>
-        //     <h3>About Me</h3>
-        //     {updating ? 
-        //       <form onSubmit={handleSubmit}>
-        //         <input
-        //           type="text"
-        //           name="about"
-        //           placeholder="about me"
-        //           onChange={handleChanges}
-        //           value={about}
-        //         />
-        //         <button>Submit</button>
-        //       </form>
-        //     :
-        //     <>
-        //     <button onClick={updateUser}>Update</button>
-        //     <p>{props.about}</p>
-        //     </>
-        //     }
-        //   </div>
-        // </div>
-    <Wrapper>
-      
-        <h1 className="ui header">Semantic UI Fixed Template</h1>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-        <p>This is a basic fixed menu template using fixed size containers.</p>
-        <p>A text container is used for the main container, which is useful for single column layouts</p>
-      
+    <Wrapper {...props}>
+      <h1 className="ui header">Welcome {props.username}</h1>
+      <div>
+        <h3>Total points: {props.points}</h3>
+        <h3>About Me</h3>
+        {updating ? 
+              <form onSubmit={handleSubmit}>
+                <textarea
+                  type="text"
+                  name="about"
+                  placeholder="about me"
+                  onChange={handleChanges}
+                  value={about}
+                />
+                <button>Submit</button>
+              </form>
+            :
+            <>
+            <p>{props.about}</p>
+            <button onClick={updateUser}>Update</button>
+            </>
+        }
+      </div>
     </Wrapper>
   )
 }

@@ -11,7 +11,7 @@ const States = (props) => {
 
 
     return (
-        <Wrapper>
+        <Wrapper {...props}>
             {props.loading ?
             <div class="ui vertically divided grid">
                 <div class="one column row">

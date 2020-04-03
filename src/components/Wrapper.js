@@ -1,7 +1,12 @@
 import React from 'react';
 import logo from '../images/logo192.png'
+import { Link } from 'react-router-dom';
 
 const Wrapper = (props) => {
+  const logout = () => {
+    localStorage.removeItem('token')
+    props.history.push('/')
+  }
   return (
     <>
       <div className="ui fixed inverted menu">
@@ -10,7 +15,8 @@ const Wrapper = (props) => {
             <img className="logo" src={logo}/>
             State Watcher
           </a>
-          <a href="#" className="item">Home</a>
+          <Link to="/states" className="item">States</Link>
+          <Link to="/dashboard" className="item">Home</Link>
           <div className="ui simple dropdown item">
             Dropdown <i className="dropdown icon"></i>
             <div className="menu">
@@ -29,6 +35,7 @@ const Wrapper = (props) => {
               <a className="item" href="#">Link Item</a>
             </div>
           </div>
+          <p className="header item" onClick={logout}>Logout</p>
           <div class="label" style={{display: 'flex', justifyContent: 'flex-end', width: '100%', alignItems: 'center'}}>
               <a class="user">
                 {props.username}

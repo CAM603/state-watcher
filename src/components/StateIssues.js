@@ -5,20 +5,40 @@ const StateIssues = (props) => {
   
   const renderScreen = () => {
     if(props.issues.length < 1) {
-      return <h1>No issues here</h1>
+      return (
+        
+          <h1>No issues here</h1>
+        
+      )
     } else {
       return (
         <div>
-          <h1>Issues for state</h1>
           {props.issues.map(issue => (
-            <div>
-              <h3>{issue.title}</h3>
-              <p>{issue.description}</p>
-              <p>Location: {issue.location}</p>
-              <p>Upvotes: {issue.upvotes}</p>
-              <p>Created: {issue.created_at}</p>
-              <p>Posted by: {issue.posted_by}</p>
+            <div class="ui feed">
+              <div class="event">
+                <div class="label">
+                  <i class="user circle icon"></i>
+                </div>
+              <div class="content">
+                <div class="summary">
+                  <a>{issue.posted_by}</a> posted
+                  <div class="date">
+                    {issue.created_at}
+                  </div>
+                </div>
+                <div class="extra text">
+                  <h5>{issue.title}</h5>
+                  <h5>Where: {issue.location}</h5>
+                  <p>{issue.description}</p>
+                </div>
+                <div class="meta">
+                  <a class="like">
+                    <i class="like icon"></i> {issue.upvotes} Likes
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
           ))}
         </div>
       )

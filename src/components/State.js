@@ -16,7 +16,6 @@ const State = (props) => {
     return (
       <div>
         <h1>Welcome to {props.currentState.name}</h1>
-        <h2>Issues</h2>
         <div>
           <StateIssues issues={props.issues}/>
         </div>
@@ -27,7 +26,7 @@ const State = (props) => {
     return <div class="ui active centered loader"></div>
   }
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       {props.loadingState ? renderLoading() : renderScreen()}
     </Wrapper>
   )
