@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../images/logo192.png'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Wrapper = (props) => {
   const logout = () => {
@@ -35,12 +36,12 @@ const Wrapper = (props) => {
               <a className="item" href="#">Link Item</a>
             </div>
           </div>
+        </div>
+        <div className="ui container" style={{display: 'flex', justifyContent: 'flex-end'}}>
           <p className="header item" onClick={logout}>Logout</p>
-          <div class="label" style={{display: 'flex', justifyContent: 'flex-end', width: '100%', alignItems: 'center'}}>
-              <a class="user">
-                {props.username}
-              </a>
-            <i class="user circle icon huge inverted"></i>
+          <div className="item">
+            <i className="user circle icon large inverted"></i>
+              {props.username}
           </div>
         </div>
       </div>
@@ -95,5 +96,9 @@ const Wrapper = (props) => {
     </>
   )
 }
-
-export default Wrapper;
+const mapStateToProps = state => {
+  return {
+    username: state.user.username
+  }
+}
+export default connect(mapStateToProps, {})(Wrapper);
