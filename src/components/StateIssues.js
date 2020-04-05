@@ -14,26 +14,26 @@ const StateIssues = (props) => {
       return (
         <div>
           {props.issues.map(issue => (
-            <div class="ui feed">
-              <div class="event">
-                <div class="label">
-                  <i class="user circle icon"></i>
+            <div className="ui feed">
+              <div className="event">
+                <div className="label">
+                  <i className="user circle icon"></i>
                 </div>
-              <div class="content">
-                <div class="summary">
+              <div className="content">
+                <div className="summary">
                   <a>{issue.posted_by}</a> posted
-                  <div class="date">
+                  <div className="date">
                     {issue.created_at}
                   </div>
                 </div>
-                <div class="extra text">
+                <div className="extra text">
                   <h5>{issue.title}</h5>
                   <h5>Where: {issue.location}</h5>
                   <p>{issue.description}</p>
                 </div>
-                <div class="meta">
-                  <a class="like">
-                    <i class="like icon"></i> {issue.upvotes} Likes
+                <div className="meta">
+                  <a className="like">
+                    <i onClick={() => console.log('StateID', props.stateId, 'IssueID', issue.id, 'Issue', issue)} className="like icon"></i> {issue.upvotes} Likes
                   </a>
                 </div>
               </div>
@@ -47,8 +47,8 @@ const StateIssues = (props) => {
 
   const renderLoading = () => {
     return (
-      <div class="ui segment">
-        <div class="ui active loader"></div>
+      <div className="ui segment">
+        <div className="ui active loader"></div>
         <p></p>
       </div>
     )

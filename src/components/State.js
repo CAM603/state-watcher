@@ -1,16 +1,22 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {getState, getStateIssues, getStateAndIssues} from '../actions/statesAction';
 import { useParams } from 'react-router-dom';
 import StateIssues from './StateIssues';
 import Wrapper from './Wrapper';
+import IssueForm from './IssueForm';
 
 const State = (props) => {
   const {id} = useParams();
+  const [addingPost, setAddingPost] = useState(false)
 
   useEffect(() => {
     props.getStateAndIssues(id)
-  }, [id])
+  }, [id, addingPost])
+
+  const handleNewPost = () => {
+    setAddingPost(true)
+  }
 
   const renderScreen = () => {
     return (
@@ -23,7 +29,7 @@ const State = (props) => {
                 <i className="dropdown icon"></i>
                 <span className="text">New</span>
                 <div className="menu">
-                  <div className="item">Post</div>
+                  <div className="item" onClick={handleNewPost}>Post</div>
                   <div className="item">Image</div>
                 </div>
               </div>
@@ -45,7 +51,7 @@ const State = (props) => {
         </div>
         <div className="ui bottom attached segment">
           <div>
-            <StateIssues issues={props.issues}/>
+            {addingPost ? <IssueForm setAddingPost={setAddingPost} stateId={id}/> : <StateIssues issues={props.issues} stateId={id}/>}
           </div>
         </div>
       </>
