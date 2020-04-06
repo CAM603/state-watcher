@@ -14,7 +14,7 @@ export const addIssue = (stateId, issue) => dispatch => {
     .post(`https://comake4.herokuapp.com/api/states/${stateId}/issues`, issue)
     .then(res => {
       console.log('New issue', res)
-      dispatch({ type: ADD_ISSUE_SUCCESS })
+      dispatch({ type: ADD_ISSUE_SUCCESS, payload: res.data })
     })
     .catch(err => {
       console.log('New issue error', err)
@@ -27,8 +27,8 @@ export const likeIssue = (stateId, issueId, updatedIssue) => dispatch => {
   axiosWithAuth()
     .put(`https://comake4.herokuapp.com/api/states/${stateId}/issues/${issueId}`, updatedIssue)
     .then(res => {
-      console.log('New like', res)
-      dispatch({ type: LIKE_ISSUE_SUCCESS })
+      console.log('New like', res.data)
+      dispatch({ type: LIKE_ISSUE_SUCCESS, payload: res.data })
     })
     .catch(err => {
       console.log('New like error', err)

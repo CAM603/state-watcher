@@ -1,7 +1,31 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
+import { likeIssue } from '../actions/issueAction';
 
 const StateIssues = (props) => {
+
+  const handleLike = (stateId, issueId, issue) => {
+    if (props.likedIssues.some(el => el.id === issue.id)) {
+      let likedIssue = {
+        title: issue.title, 
+        description: issue.description, 
+        location: issue.location, 
+        upvotes: issue.upvotes - 1
+      }
+      props.likeIssue(stateId, issueId, likedIssue)
+      props.setLikedIssues(prev => prev.filter(el => el.id !== issue.id))
+      
+    } else {
+      let likedIssue = {
+        title: issue.title, 
+        description: issue.description, 
+        location: issue.location, 
+        upvotes: issue.upvotes + 1
+      }
+      props.likeIssue(stateId, issueId, likedIssue)
+      props.setLikedIssues([...props.likedIssues, likedIssue])
+    }
+  }
   
   const renderScreen = () => {
     if(props.issues.length < 1) {
@@ -33,7 +57,7 @@ const StateIssues = (props) => {
                 </div>
                 <div className="meta">
                   <a className="like">
-                    <i onClick={() => console.log('StateID', props.stateId, 'IssueID', issue.id, 'Issue', issue)} className="like icon"></i> {issue.upvotes} Likes
+                    <i onClick={() => handleLike(props.stateId, issue.id, issue)} className="like icon liked"></i> {issue.upvotes} Likes
                   </a>
                 </div>
               </div>
@@ -65,4 +89,4 @@ const mapStateToProps = state => {
     loadingIssues: state.states.loadingIssues
   }
 }
-export default connect(mapStateToProps, {})(StateIssues);
+export default connect(mapStateToProps, {likeIssue})(StateIssues);
