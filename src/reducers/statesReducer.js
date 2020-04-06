@@ -89,7 +89,7 @@ export const states = (state = initialState, action) => {
         case ADD_ISSUE_SUCCESS:
             return {
                 ...state,
-                currentStateIssues: [...state.currentStateIssues, action.payload],
+                // currentStateIssues: [...state.currentStateIssues, action.payload],
                 loading: false
             }
         case ADD_ISSUE_FAILURE:

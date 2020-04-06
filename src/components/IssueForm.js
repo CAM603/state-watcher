@@ -25,7 +25,6 @@ const IssueForm = (props) => {
       description: '',
       location: ''
     })
-    getStateAndIssues(props.stateId)
     props.setAddingPost(false)
   }
 

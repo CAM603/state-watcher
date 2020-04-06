@@ -10,7 +10,7 @@ const State = (props) => {
   const {id} = useParams();
   const [addingPost, setAddingPost] = useState(false)
   const [likedIssues, setLikedIssues] = useState([])
-  
+  console.log(likedIssues)
   useEffect(() => {
     props.getStateAndIssues(id)
   }, [id, addingPost, likedIssues])

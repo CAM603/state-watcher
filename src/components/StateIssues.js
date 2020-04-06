@@ -23,7 +23,7 @@ const StateIssues = (props) => {
         upvotes: issue.upvotes + 1
       }
       props.likeIssue(stateId, issueId, likedIssue)
-      props.setLikedIssues([...props.likedIssues, likedIssue])
+      props.setLikedIssues([...props.likedIssues, issue])
     }
   }
   
