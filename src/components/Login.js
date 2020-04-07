@@ -33,19 +33,10 @@ const Login = (props) => {
     }
     const renderLogin = () => {
         return (
-            <div className="ui middle aligned center aligned grid">
-                <div className="column" style={{ height: '100%', maxWidth: '450px', marginTop: '100px'}}>
-                    <h2 className="ui teal image header">
-                        <img src={logo} className="image"/>
-                        <div className="content">
-                            Log in to your account
-                        </div>
-                    </h2>
-                    <form className="ui large form" onSubmit={handleSubmit}>
-                        <div className="ui stacked segment">
-                            <div className="field">
-                                <div className="ui left icon input">
-                                    <i className="user icon"></i>
+            <div>
+                
+                    <form onSubmit={handleSubmit}>
+                        
                                     <input
                                         type="text"
                                         name="username"
@@ -53,11 +44,7 @@ const Login = (props) => {
                                         onChange={handleChanges}
                                         value={user.username}
                                     />
-                                </div>
-                            </div>
-                            <div className="field">
-                                <div className="ui left icon input">
-                                    <i className="lock icon"></i>
+                            
                                     <input
                                         type="password"
                                         name="password"
@@ -65,15 +52,14 @@ const Login = (props) => {
                                         onChange={handleChanges}
                                         value={user.password}
                                     />
-                                </div>
-                            </div>
-                            <button className="ui fluid large teal submit button">Log In</button>
-                        </div>
+                                
+                            <button>Log In</button>
+                        
                     </form>
-                    <div className="ui message">
+                    <div>
                         New to us? <Link to="/register">Sign Up</Link>
                     </div>
-                </div>
+                
             </div>
         )
     }

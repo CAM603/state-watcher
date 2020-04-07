@@ -27,8 +27,8 @@ const States = (props) => {
         <Wrapper {...props}>
             {props.loading ?
                 
-                <div class="ui active dimmer">
-                    <div class="ui loader"></div>
+                <div>
+                    <div>LOADING</div>
                 </div>
                 
             :

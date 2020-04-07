@@ -21,36 +21,10 @@ const State = (props) => {
   const renderScreen = () => {
     return (
       <>
-        <div className="ui top attached menu">
-          <div className="ui simple dropdown icon item">
-            <i className="add icon"></i>
-            <div className="menu">
-              <div className="item">
-                <i className="dropdown icon"></i>
-                <span className="text">New</span>
-                <div className="menu">
-                  <div className="item" onClick={handleNewPost}>Post</div>
-                  <div className="item">Image</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h2 style={{padding: '10px', marginLeft: '15px'}}>Welcome to {props.currentState.name}</h2>
-          </div>
-        
-          <div className="right menu">
-            <div className="ui right aligned category search item">
-              <div className="ui transparent icon input">
-                <input className="prompt" type="text" placeholder="Search posts..."/>
-                <i className="search link icon"></i>
-              </div>
-              <div className="results"></div>
-            </div>
-          </div>
-        </div>
-        <div className="ui bottom attached segment">
-          <div>
+            <h1 onClick={handleNewPost}>New Post</h1>
+                  
+            <h2>Welcome to {props.currentState.name}</h2>
+          
             {
             addingPost ? 
               <IssueForm setAddingPost={setAddingPost} stateId={id}/> 
@@ -60,14 +34,14 @@ const State = (props) => {
                 stateId={id}
               />
             }
-          </div>
-        </div>
+          
+        
       </>
     )
   }
   const renderLoading = () => {
-    return <div class="ui active dimmer">
-              <div class="ui loader"></div>
+    return <div>
+              <di>LOADING</di>
           </div>
   }
   return (

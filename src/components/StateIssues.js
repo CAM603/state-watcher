@@ -14,7 +14,7 @@ const StateIssues = (props) => {
       )
     } else {
       return (
-        <div className="ui feed">
+        <div>
           {props.issues.map(issue => (
             <Issue issue={issue} stateId={props.stateId}/>
           ))}
@@ -25,11 +25,8 @@ const StateIssues = (props) => {
 
   const renderLoading = () => {
     return (
-      <div className="ui segment">
-        <div className="ui active loader medium"></div>
-        <p></p>
-        <p></p>
-        <p></p>
+      <div>
+        LOADING
       </div>
     )
   }

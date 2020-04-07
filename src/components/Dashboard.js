@@ -33,7 +33,7 @@ const Dashboard = (props) => {
 
   return (
     <Wrapper {...props}>
-      {/* <h1 className="ui header">Welcome {props.username}</h1>
+      <h1>Welcome {props.username}</h1>
       <div>
         <h3>Total points: {props.points}</h3>
         <h3>About Me</h3>
@@ -54,26 +54,6 @@ const Dashboard = (props) => {
             <button onClick={updateUser}>Update</button>
             </>
         }
-      </div> */}
-      <div className="ui card">
-        <div className="image">
-          <i className="user circle icon huge inverted"></i>
-        </div>
-        <div className="content">
-          <a className="header">{props.username}</a>
-          <div className="meta">
-            <span className="date">Joined in 2013</span>
-          </div>
-          <div className="description">
-            {props.about}
-          </div>
-        </div>
-        <div className="extra content">
-          <a>
-            <i className="user icon"></i>
-            {props.points} points
-          </a>
-        </div>
       </div>
     </Wrapper>
   )

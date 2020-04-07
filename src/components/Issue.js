@@ -27,28 +27,18 @@ const Issue = ({issue, stateId, likeIssue}) => {
     setLiked(!liked)
   }
   return (
-    <div className="event">
-      <div className="label">
-        <i className="user circle icon"></i>
-      </div>
-      <div className="content">
-        <div className="summary">
+    <div>
+      
           <a>{issue.posted_by}</a> posted
-          <div className="date">
+          
             {issue.created_at}
-          </div>
-        </div>
-        <div className="extra text">
+          
           <h5>{issue.title}</h5>
           <h5>Where: {issue.location}</h5>
           <p>{issue.description}</p>
-        </div>
-        <div className="meta">
-          <a onClick={handleLike} className="like">
-            <i className={liked ? "like icon liked" : "like icon"}></i> {issue.upvotes} Likes
-          </a>
-        </div>
-      </div>
+          <div onClick={handleLike}>
+            <h5 className={liked ? "liked" : ""}>{issue.upvotes} Likes</h5> 
+          </div>
     </div>
   )
 }
