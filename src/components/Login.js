@@ -20,11 +20,9 @@ const Login = (props) => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        props.login(user)
-        setTimeout(() => {
-            setUser({username: '', password: ''})
-            props.history.push('/dashboard')
-        }, 1000)
+        props.login(user, props)
+        setUser({username: '', password: ''})
+
     }
 
     return (
@@ -72,5 +70,9 @@ const Login = (props) => {
         </div>
     )
 }
-
-export default connect(null, {login})(Login);
+const mapStateToProps = state => {
+    return {
+        loading: state.login.loading
+    }
+}
+export default connect(mapStateToProps, {login})(Login);

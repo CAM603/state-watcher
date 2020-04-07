@@ -1,33 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Onboarding = () => {
-    
+const Onboarding = (props) => {
+  
   return (
     <>
-      <div className="ui large top fixed hidden menu">
-        <div className="ui container">
-          <a className="active item">Home</a>
-          <a className="item">Work</a>
-          <a className="item">Company</a>
-          <a className="item">Careers</a>
-          <div className="right menu">
-            <div className="item">
-              <Link to="/login" className="ui inverted button">Login</Link>
-            </div>
-            <div className="item">
-              <Link to="/register" className="ui inverted button">Sign Up</Link>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="pusher">
         <div className="ui inverted vertical masthead center aligned segment">
           <div className="ui container">
             <div className="ui large secondary inverted pointing menu">
-              <a className="toc item">
-                <i className="sidebar icon"></i>
-              </a>
               <a className="active item">Home</a>
               <a className="item">Work</a>
               <a className="item">Company</a>
@@ -40,9 +21,9 @@ const Onboarding = () => {
           </div>
           <div className="ui text container">
             <h1 className="ui inverted header">
-              Imagine-a-Company
+              State-Watcher
             </h1>
-            <h2>Do whatever you want when you want to.</h2>
+            <h2>Join your state, keep up to date</h2>
             <Link to="/register">
               <div className="ui huge primary button">Get Started <i className="right arrow icon"></i></div>
             </Link>

@@ -11,7 +11,8 @@ const Dashboard = (props) => {
   const [updating, setUpdating] = useState(false)
   
   useEffect(() => {
-    props.getUser(props.user_id)
+    const userId = localStorage.getItem('user');
+    props.getUser(userId)
   }, [])
   
   const handleChanges = (event) => {
