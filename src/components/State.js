@@ -64,7 +64,9 @@ const State = (props) => {
     )
   }
   const renderLoading = () => {
-    return <div className="ui active centered loader"></div>
+    return <div class="ui active dimmer">
+              <div class="ui loader"></div>
+          </div>
   }
   return (
     <Wrapper {...props}>

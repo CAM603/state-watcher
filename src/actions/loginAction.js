@@ -12,6 +12,7 @@ export const login = (credentials, props) => dispatch => {
             console.log('Login success', res)
             localStorage.setItem('token', res.data.token)
             localStorage.setItem('user', res.data.user_id)
+            localStorage.setItem('message', res.data.message)
             props.history.push({ pathname: '/dashboard' })
             dispatch({ type: LOGIN_SUCCESS, payload: res.data })
         })

@@ -8,21 +8,20 @@ const Wrapper = (props) => {
     localStorage.removeItem('token')
     props.history.push('/')
   }
+
   return (
     <>
       <div className="ui fixed inverted menu">
         <div className="ui container" style={{display: 'flex', justifyContent: 'flex-start'}}>
-          <a href="#" className="header item">
+          <Link to="/" className="header item">
             <img className="logo" src={logo}/>
             State Watcher
-          </a>
-          <Link to="/states" className="item">States</Link>
-          <Link to="/dashboard" className="item">Home</Link>
+          </Link>
           <div className="ui simple dropdown item">
-            Dropdown <i className="dropdown icon"></i>
+            Explore <i className="dropdown icon"></i>
             <div className="menu">
-              <a className="item" href="#">Link Item</a>
-              <a className="item" href="#">Link Item</a>
+              <Link to="/states" className="item">States</Link>
+              <Link to="/dashboard" className="item">My Profile</Link>
               <div className="divider"></div>
               <div className="header">Header Item</div>
               <div className="item">
@@ -33,12 +32,11 @@ const Wrapper = (props) => {
                   <a className="item" href="#">Link Item</a>
                 </div>
               </div>
-              <a className="item" href="#">Link Item</a>
+              <p className="item" onClick={logout}>Logout</p>
             </div>
           </div>
         </div>
         <div className="ui container" style={{display: 'flex', justifyContent: 'flex-end'}}>
-          <p className="header item" onClick={logout}>Logout</p>
           <div className="item">
             <i className="user circle icon large inverted"></i>
               {props.username}

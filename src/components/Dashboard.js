@@ -84,7 +84,7 @@ const mapStateToProps = state => {
     user_id: state.login.user_id,
     username: state.user.username,
     points: state.user.points,
-    about: state.user.about
+    about: state.user.about,
   }
 }
 export default connect(mapStateToProps, {getUser, updateUser})(Dashboard);

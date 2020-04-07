@@ -22,6 +22,7 @@ const States = (props) => {
         let id = statesSwitch(data)
         props.history.push(`/states/${id}`)
     }
+
     return (
         <Wrapper {...props}>
             {props.loading ?

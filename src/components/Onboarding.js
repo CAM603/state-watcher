@@ -1,22 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 const Onboarding = (props) => {
-  
+  const loggedIn = localStorage.getItem('token')
+  const message = localStorage.getItem('message')
   return (
     <>
       <div className="pusher">
         <div className="ui inverted vertical masthead center aligned segment">
           <div className="ui container">
             <div className="ui large secondary inverted pointing menu">
-              <a className="active item">Home</a>
-              <a className="item">Work</a>
-              <a className="item">Company</a>
-              <a className="item">Careers</a>
+              {loggedIn 
+              ?
+              <div className="right item">
+                <h1>{message}</h1>
+              <Link to="/dashboard" className="ui inverted button">My profile</Link>
+              </div>
+              :
               <div className="right item">
                 <Link to="/login" className="ui inverted button">Login</Link>
                 <Link to="/register" className="ui inverted button">Sign Up</Link>
               </div>
+            }
             </div>
           </div>
           <div className="ui text container">
