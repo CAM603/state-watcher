@@ -9,11 +9,10 @@ import IssueForm from './IssueForm';
 const State = (props) => {
   const {id} = useParams();
   const [addingPost, setAddingPost] = useState(false)
-  const [likedIssues, setLikedIssues] = useState([])
   
   useEffect(() => {
     props.getStateAndIssues(id)
-  }, [id, addingPost, likedIssues])
+  }, [id, addingPost])
 
   const handleNewPost = () => {
     setAddingPost(true)
@@ -52,12 +51,15 @@ const State = (props) => {
         </div>
         <div className="ui bottom attached segment">
           <div>
-            {addingPost ? <IssueForm setAddingPost={setAddingPost} stateId={id}/> : <StateIssues 
-              issues={props.issues} 
-              stateId={id}
-              likedIssues={likedIssues}
-              setLikedIssues={setLikedIssues}
-            />}
+            {
+            addingPost ? 
+              <IssueForm setAddingPost={setAddingPost} stateId={id}/> 
+            : 
+              <StateIssues 
+                issues={props.issues} 
+                stateId={id}
+              />
+            }
           </div>
         </div>
       </>

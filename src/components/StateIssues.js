@@ -1,31 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import { likeIssue } from '../actions/issueAction';
+import Issue from './Issue';
 
 const StateIssues = (props) => {
-
-  const handleLike = (stateId, issueId, issue) => {
-    if (props.likedIssues.some(el => el.id === issue.id)) {
-      let likedIssue = {
-        title: issue.title, 
-        description: issue.description, 
-        location: issue.location, 
-        upvotes: issue.upvotes - 1
-      }
-      props.likeIssue(stateId, issueId, likedIssue)
-      props.setLikedIssues(prev => prev.filter(el => el.id !== issue.id))
-      
-    } else {
-      let likedIssue = {
-        title: issue.title, 
-        description: issue.description, 
-        location: issue.location, 
-        upvotes: issue.upvotes + 1
-      }
-      props.likeIssue(stateId, issueId, likedIssue)
-      props.setLikedIssues([...props.likedIssues, issue])
-    }
-  }
   
   const renderScreen = () => {
     if(props.issues.length < 1) {
@@ -36,33 +14,9 @@ const StateIssues = (props) => {
       )
     } else {
       return (
-        <div>
+        <div className="ui feed">
           {props.issues.map(issue => (
-            <div className="ui feed">
-              <div className="event">
-                <div className="label">
-                  <i className="user circle icon"></i>
-                </div>
-              <div className="content">
-                <div className="summary">
-                  <a>{issue.posted_by}</a> posted
-                  <div className="date">
-                    {issue.created_at}
-                  </div>
-                </div>
-                <div className="extra text">
-                  <h5>{issue.title}</h5>
-                  <h5>Where: {issue.location}</h5>
-                  <p>{issue.description}</p>
-                </div>
-                <div className="meta">
-                  <a className="like">
-                    <i onClick={() => handleLike(props.stateId, issue.id, issue)} className="like icon liked"></i> {issue.upvotes} Likes
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            <Issue issue={issue} stateId={props.stateId}/>
           ))}
         </div>
       )
