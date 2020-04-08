@@ -12,8 +12,8 @@ const Wrapper = (props) => {
   }
 
   return (
-    <div style={{}}>
-      <div style={{height: '100px'}}>
+    <div>
+      <div>
         <Link to="/states">States</Link>
         <Link to="/dashboard">My Profile</Link>
         <p onClick={logout}>Logout</p>
