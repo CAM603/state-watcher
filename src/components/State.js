@@ -23,9 +23,9 @@ const State = (props) => {
     return (
       <div className="state-container">
         <div className="state-header">
-            <h1>Welcome to {props.currentState.name}</h1>
+            <h1>Welcome to {props.currentState.name}!</h1>
             <input type="text" placeholder="search"/>
-            <p onClick={handleNewPost}>New Post</p>
+            <p onClick={handleNewPost}>+</p>
         </div>
         {addingPost ? 
           <IssueForm 

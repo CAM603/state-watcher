@@ -154,6 +154,10 @@ h2 {
   font-size: 1.8rem;
 }
 
+h3 {
+  font-size: 1.6rem;
+}
+
 h4 {
   font-size: 1.4rem;
 }
@@ -395,8 +399,8 @@ main section.primary a {
 }
 
 .wrapper-container {
-  background-color: grey;
   min-height: 90vh;
+  background-color: #beeeee;
 }
 
 .wrapper-container .navigation {
@@ -437,6 +441,7 @@ main section.primary a {
 .wrapper-container .navigation .content-left .item a {
   font-size: 2rem;
   text-decoration: none;
+  color: black;
 }
 
 .wrapper-container .navigation .content-right {
@@ -489,12 +494,55 @@ main section.primary a {
 }
 
 .state-container {
-  border: solid black 3px;
-  padding: 20px;
-  height: 90vh;
+  min-height: 90vh;
+  width: 100%;
 }
 
 .state-container .state-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 5vh;
+  width: 100%;
+  height: 5vh;
+  background-color: #005dff;
+  padding: 20px 10px;
+}
+
+.state-container .state-header p {
+  font-size: 2em;
+}
+
+.issues-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.issues-container .issue {
+  margin: 10px 0 5px 0;
+  padding: 10px 15px;
+  width: 80%;
+  background-color: #fff;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.issues-container .issue .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -503,7 +551,74 @@ main section.primary a {
           justify-content: space-between;
 }
 
-.issues-container {
-  border: solid black 2px;
+.issues-container .issue .header .picture {
+  width: 10%;
+}
+
+.issues-container .issue .header .picture span {
+  font-size: 3em;
+}
+
+.issues-container .issue .header .text {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.issues-container .issue .header .text .user {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.issues-container .issue .header .more {
+  width: 10%;
+  text-align: right;
+}
+
+.issues-container .issue .header .more p {
+  font-size: 2em;
+}
+
+.issues-container .issue .body {
+  border: solid black 1px;
+  padding: 10px;
+}
+
+.issues-container .issue .body p {
+  font-size: 1.3em;
+}
+
+.issues-container .issue .issue-footer {
+  padding: 5px;
+  text-align: right;
+}
+
+.issues-container .issue:first-child {
+  margin-top: 10vh;
+}
+
+.issues-container .issue:last-child {
+  margin-bottom: 20px;
+}
+
+.no-issues-container {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=main.css.map */

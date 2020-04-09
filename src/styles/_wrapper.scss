@@ -1,6 +1,6 @@
 .wrapper-container {
-  background-color: grey;
   min-height: 90vh;
+  background-color: rgb(190, 238, 238);
 
   .navigation {
     width: 100%;
@@ -25,6 +25,7 @@
         a {
           font-size: 2rem;
           text-decoration: none;
+          color: black;
         }
       }
     }

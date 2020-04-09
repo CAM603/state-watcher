@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import logo from '../images/logo192.png';
-
 import { login } from '../actions/loginAction';
+import Loading from './Loading';
 
 const Login = (props) => {
   const [user, setUser] = useState({
@@ -24,11 +23,7 @@ const Login = (props) => {
       setUser({username: '', password: ''})
   }
   const renderLoading = () => {
-      return (
-          <div>
-              <div>Loading...</div>
-          </div>
-      )
+      return <Loading/>
   }
   const renderLogin = () => {
     return (

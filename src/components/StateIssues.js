@@ -9,9 +9,9 @@ const StateIssues = (props) => {
   const renderScreen = () => {
     if(props.issues.length < 1) {
       return (
-        
+        <div className="no-issues-container">
           <h1>No issues here</h1>
-        
+        </div>
       )
     } else {
       return (

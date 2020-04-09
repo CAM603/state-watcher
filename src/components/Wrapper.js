@@ -30,7 +30,7 @@ const Wrapper = (props) => {
           </div>
         </div>
       </div>
-      <div style={{marginTop: '5vh'}}>
+      <div style={{marginTop: '5vh', marginBottom: '5vh'}}>
         {props.children}
       </div>
       <div className="footer">
