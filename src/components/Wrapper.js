@@ -13,9 +13,22 @@ const Wrapper = (props) => {
   return (
     <div className="wrapper-container">
       <div className="navigation">
-        <Link to="/states">States</Link>
-        <Link to="/dashboard">My Profile</Link>
-        <p onClick={logout}>Logout</p>
+        <div className="content-left">
+          <div className="item">
+            <Link to="/states">States</Link>
+          </div>
+          <div className="item">
+            <Link to="/dashboard">My Profile</Link>
+          </div>
+        </div>
+        <div className="content-right">
+          <div className="item">
+            <p onClick={logout}>Logout</p>
+          </div>
+          <div className="item">
+            <p><span>👨🏻‍🦰</span></p>
+          </div>
+        </div>
       </div>
       <div style={{marginTop: '5vh'}}>
         {props.children}

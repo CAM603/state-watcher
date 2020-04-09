@@ -8,6 +8,40 @@
     background-color: #fff;
     position: fixed;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .content-left {
+      width: 80%;
+      display: flex;
+
+      .item {
+        margin-left: 2em;
+        border-bottom: 2px black solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          font-size: 2rem;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .content-right {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .item {
+
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
   }
   .footer {
     bottom: 0;
