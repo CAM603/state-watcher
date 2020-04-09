@@ -31,8 +31,8 @@ const Dashboard = (props) => {
 
   return (
     <Wrapper {...props}>
-      <h1>Welcome {props.username}</h1>
-      <div>
+      <div style={{padding: '30px'}}>
+        <h1>Welcome {props.username}</h1>
         <h3>Total points: {props.points}</h3>
         <h3>About Me</h3>
         {updating ? 

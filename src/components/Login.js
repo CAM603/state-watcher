@@ -26,7 +26,7 @@ const Login = (props) => {
   const renderLoading = () => {
       return (
           <div>
-              <div></div>
+              <div>Loading...</div>
           </div>
       )
   }
@@ -36,21 +36,24 @@ const Login = (props) => {
         <div className="onboarding-container"></div>
           <div className="login-container">
             <div className="login">
+              <h1>State Watcher</h1>
               <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="username"
-                  onChange={handleChanges}
-                  value={user.username}
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={handleChanges}
-                  value={user.password}
-                />
+                <div>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="username"
+                    onChange={handleChanges}
+                    value={user.username}
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="password"
+                    onChange={handleChanges}
+                    value={user.password}
+                  />
+                </div>
                 <button>Log In</button>
               </form>
               <div className="login-footer">

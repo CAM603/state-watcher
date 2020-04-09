@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../images/logo192.png'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -12,15 +11,18 @@ const Wrapper = (props) => {
   }
 
   return (
-    <div>
-      <div>
+    <div className="wrapper-container">
+      <div className="navigation">
         <Link to="/states">States</Link>
         <Link to="/dashboard">My Profile</Link>
         <p onClick={logout}>Logout</p>
       </div>
-      
+      <div style={{marginTop: '5vh'}}>
         {props.children}
-      
+      </div>
+      <div className="footer">
+        <p>State Watcher By: <a>Cameron Hawley</a></p>
+      </div>
     </div>
   )
 }
