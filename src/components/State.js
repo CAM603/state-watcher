@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import StateIssues from './StateIssues';
 import Wrapper from './Wrapper';
 import IssueForm from './IssueForm';
+import Loading from './Loading';
 
 const State = (props) => {
   const {id} = useParams();
@@ -20,29 +21,28 @@ const State = (props) => {
 
   const renderScreen = () => {
     return (
-      <>
-            <h1 onClick={handleNewPost}>New Post</h1>
-                  
-            <h2>Welcome to {props.currentState.name}</h2>
-          
-            {
-            addingPost ? 
-              <IssueForm setAddingPost={setAddingPost} stateId={id}/> 
-            : 
-              <StateIssues 
-                issues={props.issues} 
-                stateId={id}
-              />
-            }
-          
-        
-      </>
+      <div className="state-container">
+        <div className="state-header">
+            <h1>Welcome to {props.currentState.name}</h1>
+            <input type="text" placeholder="search"/>
+            <p onClick={handleNewPost}>New Post</p>
+        </div>
+        {addingPost ? 
+          <IssueForm 
+            setAddingPost={setAddingPost} 
+            stateId={id}
+          /> 
+          : 
+          <StateIssues 
+            issues={props.issues} 
+            stateId={id}
+          />
+        }
+      </div>
     )
   }
   const renderLoading = () => {
-    return <div>
-              <di>LOADING</di>
-          </div>
+    return <Loading/>
   }
   return (
     <Wrapper {...props}>

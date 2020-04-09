@@ -1,0 +1,10 @@
+.state-container {
+  border: solid black 3px;
+  padding: 20px;
+  height: 90vh;
+
+  .state-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

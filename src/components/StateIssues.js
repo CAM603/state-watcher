@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import { likeIssue } from '../actions/issueAction';
 import Issue from './Issue';
+import Loading from './Loading';
 
 const StateIssues = (props) => {
   
@@ -14,7 +15,7 @@ const StateIssues = (props) => {
       )
     } else {
       return (
-        <div>
+        <div className="issues-container">
           {props.issues.map(issue => (
             <Issue issue={issue} stateId={props.stateId}/>
           ))}
@@ -24,11 +25,7 @@ const StateIssues = (props) => {
   }
 
   const renderLoading = () => {
-    return (
-      <div>
-        LOADING
-      </div>
-    )
+    return <Loading/>
   }
 
   return (

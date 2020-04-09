@@ -1,8 +1,6 @@
 .login-container {
+  @include center;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   .login {
     height: 40%;
