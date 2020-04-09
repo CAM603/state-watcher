@@ -1,8 +1,11 @@
 $colors: (
-  primary: #005dff,
-  primary-light: lighten(#005dff, 40%),
-  primary-dark: darken(#005dff, 40%),
-  accent: #FFF6BB
+  primary: #50d890,
+  secondary: #4f98ca,
+  blue: #005dff,
+  dark: #272727,
+  primary-light: lighten(#50d890, 40%),
+  primary-dark: darken(#50d890, 40%),
+  accent: #effffb
 );
 
 $padding: 15px;

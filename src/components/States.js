@@ -34,7 +34,7 @@ const States = (props) => {
         <div className="map">
           <VectorMap
             map={'us_aea'}
-            backgroundColor="#3b96ce"
+            backgroundColor="#50d890"
             useRef='map'
             containerStyle={{
                 width: '100%',

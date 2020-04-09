@@ -183,7 +183,7 @@ h4 {
 .onboarding-container {
   -webkit-clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
           clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
-  background-color: #005dff;
+  background-color: #50d890;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -198,7 +198,7 @@ h4 {
 }
 
 header a {
-  color: #fff;
+  color: #272727;
   text-decoration: none;
   padding: 15px;
   display: inline-block;
@@ -216,7 +216,7 @@ header a {
 }
 
 main section.card {
-  background-color: #fff;
+  background-color: #4f98ca;
   padding: 20px;
   margin: 1em auto;
   border-radius: 15px;
@@ -252,7 +252,7 @@ main ul li span {
   position: absolute;
   width: 30px;
   height: 30px;
-  background-color: #ccdfff;
+  background-color: #f7fdfa;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -264,7 +264,7 @@ main ul li strong {
 }
 
 main section.primary {
-  color: #fff;
+  color: #272727;
   padding: 15px;
   text-align: center;
 }
@@ -296,12 +296,12 @@ main section.primary p {
 }
 
 main section.primary a {
-  color: #001333;
+  color: #114b2c;
   border-radius: 15px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: #FFF6BB;
+  background-color: #effffb;
   display: block;
   text-align: center;
   margin: 50px auto 0 auto;
@@ -383,7 +383,7 @@ main section.primary a {
 }
 
 .login-container .login form button {
-  color: #001333;
+  color: #114b2c;
   border-radius: 15px;
   text-decoration: none;
   text-transform: uppercase;
@@ -400,13 +400,13 @@ main section.primary a {
 
 .wrapper-container {
   min-height: 90vh;
-  background-color: #beeeee;
+  background-color: #50d890;
 }
 
 .wrapper-container .navigation {
   width: 100%;
   height: 5vh;
-  background-color: #fff;
+  background-color: #272727;
   position: fixed;
   top: 0;
   display: -webkit-box;
@@ -426,7 +426,7 @@ main section.primary a {
 
 .wrapper-container .navigation .content-left .item {
   margin-left: 2em;
-  border-bottom: 2px black solid;
+  border-bottom: 2px #f7fdfa solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,7 +441,7 @@ main section.primary a {
 .wrapper-container .navigation .content-left .item a {
   font-size: 2rem;
   text-decoration: none;
-  color: black;
+  color: #f7fdfa;
 }
 
 .wrapper-container .navigation .content-right {
@@ -458,6 +458,7 @@ main section.primary a {
 
 .wrapper-container .navigation .content-right .item p {
   font-size: 2rem;
+  color: #f7fdfa;
 }
 
 .wrapper-container .footer {
@@ -470,9 +471,13 @@ main section.primary a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: white;
+  background-color: #272727;
   padding: 20px;
   height: 5vh;
+}
+
+.wrapper-container .footer p {
+  color: #f7fdfa;
 }
 
 .states-container {
@@ -496,15 +501,6 @@ main section.primary a {
 .state-container {
   min-height: 90vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .state-container .state-header {
@@ -520,12 +516,17 @@ main section.primary a {
   top: 5vh;
   width: 100%;
   height: 5vh;
-  background-color: #005dff;
+  background-color: #114b2c;
   padding: 20px 10px;
+}
+
+.state-container .state-header h1 {
+  color: #f7fdfa;
 }
 
 .state-container .state-header p {
   font-size: 2em;
+  color: #f7fdfa;
 }
 
 .issues-container {

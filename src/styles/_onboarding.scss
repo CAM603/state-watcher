@@ -12,7 +12,7 @@
 
 }
 header a {
-  color: #fff;
+  color: color(dark);
   text-decoration: none;
   padding: $padding;
   display: inline-block;
@@ -28,7 +28,7 @@ main {
   }
 
   section.card {
-    background-color: #fff;
+    background-color: color(secondary);
     padding: 20px;
     margin: 1em auto;
     border-radius: $boarders;
@@ -67,7 +67,7 @@ main {
     }
   }
   section.primary {
-    color: #fff;
+    color: color(dark);
     padding: $padding;
     text-align: center;
 

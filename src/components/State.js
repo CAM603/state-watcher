@@ -22,7 +22,6 @@ const State = (props) => {
     setModalShowing(false)
   }
   const handleNewPost = () => {
-    console.log('clicked')
     showModal()
   }
 
