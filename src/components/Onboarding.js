@@ -6,25 +6,37 @@ const Onboarding = (props) => {
   const message = localStorage.getItem('message')
 
   return (
-    <div>
-      <div>
-        {loggedIn 
-        ?
-        <div>
-          <h1>{message}</h1>
-          <Link to="/dashboard">My profile</Link>
-        </div>
-        :
-        <div>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Sign Up</Link>
-        </div>
-        }
-      </div>
-      <Link to="/register">
-        <h1>Get Started</h1>
-      </Link>          
+    <>
+    <div className="onboarding-container">
     </div>
+      <header>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Sign Up</Link>
+      </header>
+      <main>
+        <section className="card">
+          <ul>
+            <li>
+              <span></span>
+              <strong>Do you travel bro?</strong>
+            </li>
+            <li>
+              <span></span>
+              <strong>Do you visit multiple states?</strong>
+            </li>
+            <li>
+              <span></span>
+              <strong>State Watcher can help</strong>
+            </li>
+          </ul>
+        </section>
+        <section className="primary">
+          <h1>State Watcher</h1>
+          <p>See something, say something</p>
+          <Link to="/register">Get started</Link>
+        </section>
+      </main>
+      </>
   )
 }
 

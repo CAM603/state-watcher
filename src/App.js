@@ -5,7 +5,6 @@ import Onboarding from './components/Onboarding';
 import Register from './components/Register';
 import Login from './components/Login';
 import PrivateRoute from './utils/PrivateRoute';
-import './styles/main.scss';
 import Dashboard from './components/Dashboard';
 import States from './components/States';
 import State from './components/State';

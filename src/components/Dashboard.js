@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { connect}  from 'react-redux';
 import { getUser, updateUser } from '../actions/userAction';
 import { Link } from 'react-router-dom';
-
-import logo from '../images/logo192.png'
 import Wrapper from './Wrapper';
 
 const Dashboard = (props) => {
