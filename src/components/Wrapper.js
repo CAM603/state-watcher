@@ -1,97 +1,42 @@
 import React from 'react';
-import logo from '../images/logo192.png'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Wrapper = (props) => {
   const logout = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    localStorage.removeItem('message')
     props.history.push('/')
   }
 
   return (
-    <>
-      <div className="ui fixed inverted menu">
-        <div className="ui container" style={{display: 'flex', justifyContent: 'flex-start'}}>
-          <Link to="/" className="header item">
-            <img className="logo" src={logo}/>
-            State Watcher
-          </Link>
-          <div className="ui simple dropdown item">
-            Explore <i className="dropdown icon"></i>
-            <div className="menu">
-              <Link to="/states" className="item">States</Link>
-              <Link to="/dashboard" className="item">My Profile</Link>
-              <div className="divider"></div>
-              <div className="header">Header Item</div>
-              <div className="item">
-                <i className="dropdown icon"></i>
-                Sub Menu
-                <div className="menu">
-                  <a className="item" href="#">Link Item</a>
-                  <a className="item" href="#">Link Item</a>
-                </div>
-              </div>
-              <p className="item" onClick={logout}>Logout</p>
-            </div>
+    <div className="wrapper-container">
+      <div className="navigation">
+        <div className="content-left">
+          <div className="item">
+            <Link to="/states">States</Link>
+          </div>
+          <div className="item">
+            <Link to="/dashboard">My Profile</Link>
           </div>
         </div>
-        <div className="ui container" style={{display: 'flex', justifyContent: 'flex-end'}}>
+        <div className="content-right">
           <div className="item">
-            <i className="user circle icon large inverted"></i>
-              {props.username}
+            <p onClick={logout}>Logout</p>
+          </div>
+          <div className="item">
+            <p><span>👨🏻‍🦰</span></p>
           </div>
         </div>
       </div>
-      <div className="ui main text container">
+      <div style={{marginTop: '5vh', marginBottom: '5vh'}}>
         {props.children}
       </div>
-      <div className="ui inverted vertical footer segment">
-        <div className="ui center aligned container">
-          <div className="ui stackable inverted divided grid">
-            <div className="three wide column">
-              <h4 className="ui inverted header">Group 1</h4>
-              <div className="ui inverted link list">
-                <a href="#" className="item">Link One</a>
-                <a href="#" className="item">Link Two</a>
-                <a href="#" className="item">Link Three</a>
-                <a href="#" className="item">Link Four</a>
-              </div>
-            </div>
-            <div className="three wide column">
-              <h4 className="ui inverted header">Group 2</h4>
-              <div className="ui inverted link list">
-                <a href="#" className="item">Link One</a>
-                <a href="#" className="item">Link Two</a>
-                <a href="#" className="item">Link Three</a>
-                <a href="#" className="item">Link Four</a>
-              </div>
-            </div>
-            <div className="three wide column">
-              <h4 className="ui inverted header">Group 3</h4>
-              <div className="ui inverted link list">
-                <a href="#" className="item">Link One</a>
-                <a href="#" className="item">Link Two</a>
-                <a href="#" className="item">Link Three</a>
-                <a href="#" className="item">Link Four</a>
-              </div>
-            </div>
-            <div className="seven wide column">
-              <h4 className="ui inverted header">Footer Header</h4>
-              <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-            </div>
-          </div>
-          <div className="ui inverted section divider"></div>
-          <img src={logo} className="ui centered mini image"/>
-          <div className="ui horizontal inverted small divided link list">
-            <a className="item" href="#">Site Map</a>
-            <a className="item" href="#">Contact Us</a>
-            <a className="item" href="#">Terms and Conditions</a>
-            <a className="item" href="#">Privacy Policy</a>
-          </div>
-        </div>
+      <div className="footer">
+        <p>State Watcher By: <a>Cameron Hawley</a></p>
       </div>
-    </>
+    </div>
   )
 }
 const mapStateToProps = state => {

@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { connect}  from 'react-redux';
 import { getUser, updateUser } from '../actions/userAction';
 import { Link } from 'react-router-dom';
-
-import logo from '../images/logo192.png'
 import Wrapper from './Wrapper';
 
 const Dashboard = (props) => {
@@ -33,8 +31,8 @@ const Dashboard = (props) => {
 
   return (
     <Wrapper {...props}>
-      {/* <h1 className="ui header">Welcome {props.username}</h1>
-      <div>
+      <div style={{padding: '30px'}}>
+        <h1>Welcome {props.username}</h1>
         <h3>Total points: {props.points}</h3>
         <h3>About Me</h3>
         {updating ? 
@@ -54,26 +52,6 @@ const Dashboard = (props) => {
             <button onClick={updateUser}>Update</button>
             </>
         }
-      </div> */}
-      <div className="ui card">
-        <div className="image">
-          <i className="user circle icon huge inverted"></i>
-        </div>
-        <div className="content">
-          <a className="header">{props.username}</a>
-          <div className="meta">
-            <span className="date">Joined in 2013</span>
-          </div>
-          <div className="description">
-            {props.about}
-          </div>
-        </div>
-        <div className="extra content">
-          <a>
-            <i className="user icon"></i>
-            {props.points} points
-          </a>
-        </div>
       </div>
     </Wrapper>
   )

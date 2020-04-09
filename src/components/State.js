@@ -5,70 +5,50 @@ import { useParams } from 'react-router-dom';
 import StateIssues from './StateIssues';
 import Wrapper from './Wrapper';
 import IssueForm from './IssueForm';
+import Loading from './Loading';
 
 const State = (props) => {
   const {id} = useParams();
-  const [addingPost, setAddingPost] = useState(false)
+  const [modalShowing, setModalShowing] = useState(false);
   
   useEffect(() => {
     props.getStateAndIssues(id)
-  }, [id, addingPost])
+  }, [id, modalShowing])
 
+  const showModal = () => {
+    setModalShowing(true)
+  }
+  const hideModal = () => {
+    setModalShowing(false)
+  }
   const handleNewPost = () => {
-    setAddingPost(true)
+    showModal()
   }
 
   const renderScreen = () => {
     return (
       <>
-        <div className="ui top attached menu">
-          <div className="ui simple dropdown icon item">
-            <i className="add icon"></i>
-            <div className="menu">
-              <div className="item">
-                <i className="dropdown icon"></i>
-                <span className="text">New</span>
-                <div className="menu">
-                  <div className="item" onClick={handleNewPost}>Post</div>
-                  <div className="item">Image</div>
-                </div>
-              </div>
-            </div>
+        <div className="state-container">
+          <div className="state-header">
+              <h1>Welcome to {props.currentState.name}!</h1>
+              <input type="text" placeholder="search"/>
+              <p onClick={handleNewPost}>+</p>
           </div>
-          <div>
-            <h2 style={{padding: '10px', marginLeft: '15px'}}>Welcome to {props.currentState.name}</h2>
-          </div>
-        
-          <div className="right menu">
-            <div className="ui right aligned category search item">
-              <div className="ui transparent icon input">
-                <input className="prompt" type="text" placeholder="Search posts..."/>
-                <i className="search link icon"></i>
-              </div>
-              <div className="results"></div>
-            </div>
-          </div>
+          <StateIssues 
+            issues={props.issues} 
+            stateId={id}
+          />
         </div>
-        <div className="ui bottom attached segment">
-          <div>
-            {
-            addingPost ? 
-              <IssueForm setAddingPost={setAddingPost} stateId={id}/> 
-            : 
-              <StateIssues 
-                issues={props.issues} 
-                stateId={id}
-              />
-            }
-          </div>
-        </div>
-      </>
+        <IssueForm  
+          stateId={id}
+          modalShowing={modalShowing}
+          hideModal={hideModal}
+        />
+      </>     
     )
   }
   const renderLoading = () => {
-    return <div class="ui active dimmer">
-              <div class="ui loader"></div>
-          </div>
+    return <Loading/>
   }
   return (
     <Wrapper {...props}>

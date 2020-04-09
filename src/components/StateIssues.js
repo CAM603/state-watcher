@@ -2,19 +2,20 @@ import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import { likeIssue } from '../actions/issueAction';
 import Issue from './Issue';
+import Loading from './Loading';
 
 const StateIssues = (props) => {
   
   const renderScreen = () => {
     if(props.issues.length < 1) {
       return (
-        
+        <div className="no-issues-container">
           <h1>No issues here</h1>
-        
+        </div>
       )
     } else {
       return (
-        <div className="ui feed">
+        <div className="issues-container">
           {props.issues.map(issue => (
             <Issue issue={issue} stateId={props.stateId}/>
           ))}
@@ -24,14 +25,7 @@ const StateIssues = (props) => {
   }
 
   const renderLoading = () => {
-    return (
-      <div className="ui segment">
-        <div className="ui active loader medium"></div>
-        <p></p>
-        <p></p>
-        <p></p>
-      </div>
-    )
+    return <Loading/>
   }
 
   return (
