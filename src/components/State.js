@@ -43,6 +43,7 @@ const State = (props) => {
           stateId={id}
           modalShowing={modalShowing}
           hideModal={hideModal}
+          state={props.currentState.name}
         />
       </>     
     )

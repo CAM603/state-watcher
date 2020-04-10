@@ -31,28 +31,31 @@ const IssueForm = (props) => {
   return (
     <div className={props.modalShowing ? "modal display-block" : "modal display-none"}>
       <div className="modal-main">
+        <h1>{props.state}</h1>
         <form onSubmit={handleSubmit}>
-          <input 
-            type="text" 
-            placeholder="title"
-            name="title"
-            value={issue.title}
-            onChange={handleChange}
-          />
-          <input 
-            type="text" 
-            placeholder="description"
-            name="description"
-            value={issue.value}
-            onChange={handleChange}
-          />
-          <input 
-            type="text" 
-            placeholder="location"
-            name="location"
-            value={issue.location}
-            onChange={handleChange}
-          />
+          <div>
+            <input 
+              type="text" 
+              placeholder="title"
+              name="title"
+              value={issue.title}
+              onChange={handleChange}
+            />
+            <input 
+              type="text" 
+              placeholder="description"
+              name="description"
+              value={issue.value}
+              onChange={handleChange}
+            />
+            <input 
+              type="text" 
+              placeholder="location"
+              name="location"
+              value={issue.location}
+              onChange={handleChange}
+            />
+          </div>
           <button style={{color: 'orange'}}>Submit</button>
           <button onClick={props.hideModal} style={{color: 'red'}}>Cancel</button>
         </form>
