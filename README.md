@@ -1,7 +1,7 @@
 # State Watcher
 
 An application designed to bring attention to local issues affecting states in the US.
-Check it out [here]()
+Check it out [here](https://state-watcher.vercel.app/)
 
 ## Features
 
